@@ -1,206 +1,70 @@
-<!DOCTYPE html>
-<html lang="en">
+# Adaptive Reading Rhythm UI
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+## AI-Based Adaptive Human-Computer Interaction
 
-    <title>Adaptive Reading Rhythm</title>
+Adaptive Reading Rhythm UI is an educational prototype that demonstrates an intelligent adaptive reading interface.
 
-    <link rel="stylesheet" href="css/style.css">
-</head>
+The application observes reading interaction patterns and dynamically changes how content is presented when additional reading support may be useful.
 
-<body>
+## Interaction Signals
 
-<header>
-    <h1>Adaptive Reading Rhythm</h1>
-    <p>AI-Based Intelligent Reading Interface</p>
-</header>
+The application observes:
 
-<main class="container">
+- Definition requests
+- Section revisits
+- Requests for simplified explanations
+- Time spent reading
 
-    <section class="status-card">
+## Adaptive Modes
 
-        <h2>Adaptive Reading Workspace</h2>
+### Normal Mode
 
-        <p>
-            The interface adjusts reading support based on
-            observable reading interactions.
-        </p>
+Score 0-29.
 
-        <div class="status-grid">
+The complete article is displayed normally.
 
-            <div>
-                Reading Support Score
-                <strong id="supportScore">0</strong>
-            </div>
+### Assisted Mode
 
-            <div>
-                Support Level
-                <strong id="supportLevel">Low</strong>
-            </div>
+Score 30-59.
 
-            <div>
-                Reading Mode
-                <strong id="readingMode">Normal</strong>
-            </div>
+The interface provides additional visual support and emphasizes the reading content.
 
-        </div>
+### Chunked Mode
 
-    </section>
+Score 60-100.
 
+The article is divided into smaller sections and displayed one section at a time.
 
-    <section class="article-card">
+## Explainable Adaptation
 
-        <p class="category">TECHNOLOGY & SOCIETY</p>
+The user can select "Why Did My Reading View Change?" to see which interaction signals contributed to the adaptive decision.
 
-        <h2>The Changing Role of Artificial Intelligence</h2>
+## User Control
 
-        <div id="articleContent">
+The user can select "Return to Normal Reading" at any time to override the adaptive interface.
 
-            <div class="reading-section"
-                 data-section="1">
+## Adaptive Memory
 
-                <h3>1. Intelligent Systems</h3>
+Browser localStorage is used to remember a limited reading assistance preference between sessions.
 
-                <p>
-                    Artificial intelligence is increasingly used
-                    to create systems that can analyze information,
-                    recognize patterns, and support human
-                    decision-making.
-                </p>
+## Technologies Used
 
-                <button class="revisit-btn">
-                    Re-read This Section
-                </button>
+- HTML5
+- CSS3
+- JavaScript
+- Browser Local Storage
+- Rule-Based Adaptive Decision Logic
+- Visual Studio Code
 
-            </div>
+## Project Structure
 
-
-            <div class="reading-section"
-                 data-section="2">
-
-                <h3>2. Human-Computer Interaction</h3>
-
-                <p>
-                    Human-computer interaction focuses on designing
-                    technology that people can use effectively.
-                    Adaptive interfaces extend this idea by changing
-                    parts of the interface according to interaction
-                    patterns or user needs.
-                </p>
-
-                <button class="definition-btn"
-                        data-word="Adaptive Interface">
-                    Explain "Adaptive Interface"
-                </button>
-
-                <button class="revisit-btn">
-                    Re-read This Section
-                </button>
-
-            </div>
-
-
-            <div class="reading-section"
-                 data-section="3">
-
-                <h3>3. Explainable Adaptation</h3>
-
-                <p>
-                    An intelligent interface should provide useful
-                    assistance without unnecessarily reducing user
-                    control. Explainable adaptation can help users
-                    understand why an interface changed.
-                </p>
-
-                <button class="definition-btn"
-                        data-word="Explainable Adaptation">
-                    Explain "Explainable Adaptation"
-                </button>
-
-                <button class="revisit-btn">
-                    Re-read This Section
-                </button>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <section class="reading-tools">
-
-        <h2>Reading Tools</h2>
-
-        <button id="simpleButton">
-            Explain Simply
-        </button>
-
-        <button id="whyButton"
-                disabled>
-            Why Did My Reading View Change?
-        </button>
-
-        <button id="normalButton"
-                disabled>
-            Return to Normal Reading
-        </button>
-
-    </section>
-
-
-    <section id="supportPanel"
-             class="support-panel hidden">
-
-        <h2>Reading Assistance</h2>
-
-        <p id="supportText"></p>
-
-    </section>
-
-
-    <section id="explanationPanel"
-             class="explanation-panel hidden">
-
-        <h2>Adaptation Explanation</h2>
-
-        <p id="explanationText"></p>
-
-    </section>
-
-
-    <section id="chunkNavigation"
-             class="chunk-navigation hidden">
-
-        <button id="previousButton">
-            Previous Section
-        </button>
-
-        <span id="chunkStatus">
-            Section 1 of 3
-        </span>
-
-        <button id="nextButton">
-            Next Section
-        </button>
-
-    </section>
-
-</main>
-
-
-<footer>
-    Educational prototype for AI-Based Adaptive HCI
-</footer>
-
-
-<script src="js/readingTracker.js"></script>
-<script src="js/adaptiveReadingEngine.js"></script>
-<script src="js/app.js"></script>
-
-</body>
-
-</html>
+```text
+adaptive-reading-rhythm-ui/
+├── index.html
+├── README.md
+├── css/
+│   └── style.css
+└── js/
+    ├── readingTracker.js
+    ├── adaptiveReadingEngine.js
+    └── app.js

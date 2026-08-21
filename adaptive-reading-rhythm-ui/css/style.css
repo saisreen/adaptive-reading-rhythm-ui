@@ -1,0 +1,193 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f6f8;
+    color: #202936;
+    line-height: 1.7;
+}
+
+header {
+    background: #263238;
+    color: white;
+    padding: 30px 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+header p {
+    margin: 5px 0 0;
+}
+
+.container {
+    width: 90%;
+    max-width: 900px;
+    margin: 30px auto;
+}
+
+.status-card,
+.article-card,
+.reading-tools,
+.support-panel,
+.explanation-panel,
+.chunk-navigation {
+    background: white;
+    padding: 25px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    border: 1px solid #d9dee3;
+}
+
+.status-card h2,
+.article-card h2,
+.reading-tools h2 {
+    margin-top: 0;
+}
+
+.status-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.status-grid div {
+    background: #f1f5f9;
+    padding: 15px;
+    border-radius: 7px;
+    text-align: center;
+}
+
+.status-grid strong {
+    display: block;
+    margin-top: 5px;
+    font-size: 20px;
+}
+
+.category {
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.reading-section {
+    padding: 20px 0;
+    border-bottom: 1px solid #d9dee3;
+}
+
+.reading-section:last-child {
+    border-bottom: none;
+}
+
+button {
+    padding: 10px 15px;
+    margin: 5px 5px 5px 0;
+    border: none;
+    border-radius: 6px;
+    background: #455a64;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover:not(:disabled) {
+    background: #263238;
+}
+
+button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.reading-tools {
+    display: block;
+}
+
+.support-panel {
+    border-left: 5px solid #0288d1;
+}
+
+.explanation-panel {
+    border-left: 5px solid #7b1fa2;
+}
+
+.hidden {
+    display: none;
+}
+
+
+/* ASSISTED MODE */
+
+body.assisted-mode .article-card {
+    border: 2px solid #0288d1;
+}
+
+body.assisted-mode .reading-section h3 {
+    font-size: 21px;
+}
+
+body.assisted-mode .reading-section p {
+    font-size: 17px;
+}
+
+body.assisted-mode .reading-section {
+    background: #f8fbfd;
+    padding: 20px;
+    margin-bottom: 12px;
+    border-radius: 8px;
+}
+
+
+/* CHUNKED MODE */
+
+body.chunked-mode .article-card {
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 3px solid #455a64;
+}
+
+body.chunked-mode .reading-section {
+    display: none;
+}
+
+body.chunked-mode .reading-section.active-chunk {
+    display: block;
+    border: none;
+    font-size: 18px;
+}
+
+body.chunked-mode .reading-section h3 {
+    font-size: 25px;
+}
+
+body.chunked-mode .reading-section p {
+    font-size: 19px;
+}
+
+.chunk-navigation {
+    text-align: center;
+}
+
+#chunkStatus {
+    margin: 0 15px;
+    font-weight: bold;
+}
+
+footer {
+    text-align: center;
+    padding: 25px;
+    color: #64748b;
+}
+
+@media (max-width: 650px) {
+
+    .status-grid {
+        grid-template-columns: 1fr;
+    }
+}
